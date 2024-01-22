@@ -37,6 +37,7 @@ This template repository also sets up some `GitHub Actions` to automatically com
 Note that this Action is only executed when changes to any files in `manuscript/main` are being pushed.
 Modifications of any other file in the repository will not trigger it.
 The resulting `pdf` can be found from the `Actions` tab on `github.com` by clicking on the `Summary` associated with the last `Action` executed.
+A similar GitHub Action is set up to automatically compiled the cover letter if any changes to `manuscript/cover_letter` are being pushed.
 
 ## Good practices in $\LaTeX$
 
