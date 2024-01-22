@@ -9,10 +9,10 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v3
         with:
-          working_directory: manuscript/main/
+          working_directory: ./manuscript/main/
           root_file: Main.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
           name: PDF
-          path: manuscript/main/Main.pdf
+          path: ./manuscript/main/Main.pdf
