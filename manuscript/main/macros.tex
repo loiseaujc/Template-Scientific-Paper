@@ -1,0 +1,82 @@
+\newcommand{\redline}{\raisebox{2pt}{\tikz{\draw[-, thick, red, dashed, line width = 0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\blueline}{\raisebox{2pt}{\tikz{\draw[-, thick, blue!67, solid, line width = 0.9pt](0,0) -- (5mm,0);}}}
+
+% ---
+% Annotating equations using Tikz
+% ---
+\newcommand{\highlight}[2]{\colorbox{#1!17}{\ensuremath{\displaystyle #2}}}
+\newcommand{\highlightdark}[2]{\colorbox{#1!47}{\ensuremath{\displaystyle #2}}}
+
+% ---
+% Mathematics
+% ---
+
+% Simple macros
+\renewcommand{\det}[1]{\text{det}\left( #1 \right)}
+\renewcommand{\trace}[1]{\text{Tr}\left( #1 \right)}
+\newcommand{\Span}[1]{\text{Span}\left( #1 \right)}
+\newcommand{\conj}[1]{\ensuremath{#1^*}}
+
+% Theorems and related.
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+
+\theoremstyle{plain}
+\newtheorem{corollary}{Corollary}[section]
+
+\theoremstyle{plain}
+\newtheorem{lemma}{Lemma}[section]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+% Algebra
+\newcommand{\e}{\ensuremath{\mathrm{e}}}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+
+\newcommand{\innerprod}[2]{\ensuremath{\left\langle #1 \vert #2 \right\rangle}}
+
+% Linear algebra
+\newcommand{\allones}{\ensuremath{\mathbf{1}}}
+\newcommand{\allzeros}{\ensuremath{\mathbf{0}}}
+\newcommand{\Gram}[1]{\ensuremath{\mathbf{#1}^H \mathbf{#1}}}
+\newcommand{\inv}[1]{\ensuremath{\mathbf{#1}^{-1}}}
+\newcommand{\pinv}[1]{\ensuremath{\mathbf{#1}^{\dagger}}}
+\newcommand{\svd}[1]{\ensuremath{\mathbf{U}_{#1} \boldsymbol{\Sigma}_{#1} \mathbf{V}^H_{#1}}}
+
+% Probability and statistics
+\newcommand{\E}[1]{\ensuremath{\mathbb{E} \left( #1 \right)}}
+\newcommand{\covmat}[1]{\ensuremath{\mathbf{C}_{\mathbf{#1}}}}
+
+% Optimization problems
+\DeclareMathOperator*{\minimize}{minimize~}
+\DeclareMathOperator*{\argmin}{argmin~}
+
+\DeclareMathOperator*{\maximize}{maximize~}
+\DeclareMathOperator*{\argmax}{argmax~}
+
+\DeclareMathOperator{\subto}{subject~to~}
+
+% Column and row vectors.
+\ExplSyntaxOn
+\NewDocumentCommand{\colvec}{O{1}m}
+{
+  \scalebox{#1}{$\generalvec{#2}{\\}$}
+}
+\NewDocumentCommand{\rowvec}{O{1}m}
+{
+  \scalebox{#1}{$\generalvec{#2}{&}$}
+}
+\NewDocumentCommand{\generalvec}{mm}
+{
+  \clist_set:Nn \l_tmpa_clist { #1 }
+  %\renewcommand{\arraystretch}{.8}
+  \begin{bmatrix}
+    \clist_use:Nn \l_tmpa_clist { #2 }
+  \end{bmatrix}
+}
+\ExplSyntaxOff
+
