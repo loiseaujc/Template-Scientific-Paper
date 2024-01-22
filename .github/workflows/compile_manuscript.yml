@@ -11,23 +11,8 @@ jobs:
         with:
           working_directory: ./manuscript/main/
           root_file: Main.tex
-      - name: Stash pdf
-        run: |
-          mv ./manuscript/main/Main.pdf $HOME # Cache the file.
-      - name: Checkout gh_actions_builds branch
-        uses: actions/checkout@v1
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v3
         with:
-          ref: gh_actions_builds
-      - name: Commit pdf
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          mv $HOME/Main.pdf $(pwd)
-          git add Main.pdf
-          git commit -m "Uploaded latest pdf"
-      - name: Push pdf
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          branch: gh_actions_builds
-          force: false
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          name: PDF
+          path: ./manuscript/main/Main.pdf
