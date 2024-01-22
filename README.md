@@ -1,4 +1,4 @@
-# README
+# Simple template for writing a scientific article with $\LaTeX$
 
 This is a template repository for writing scientific papers, most notably with $\LaTeX$.
 The structure of the repository is shown below.

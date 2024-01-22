@@ -1,3 +1,3 @@
-# README
+# Cover Letter
 
-This is blank template for writing a scientific paper using LaTeX.
+This folder contains a simple template for the cover letter.
