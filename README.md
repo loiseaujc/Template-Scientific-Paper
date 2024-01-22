@@ -33,11 +33,11 @@ Each of these folders serve the following purposes:
 - `src`: This folder includes all of the source code (`Julia`, `Python`, `Fortran`, etc) needed to re-run the computations.
 - `test`: This folder contains all the tests (if any) used to validate the different implementations.
 
-## Good practices in \LaTeX
+## Good practices in $\LaTeX$
 
-The folder `manuscript/main` contains the template of a paper written using \LaTeX.
+The folder `manuscript/main` contains the template of a paper written using $\LaTeX$.
 It includes the files:
-- `preamble.tex`: Import of various \LaTeX packages,
+- `preamble.tex`: Import of various $\LaTeX$ packages,
 - `macros.tex`: Definition of various math-related macros and (re)definition of commands.
 
 Note that it only is a starting point.
