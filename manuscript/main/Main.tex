@@ -1,0 +1,198 @@
+\documentclass[onecolumn, 11pt, usenames, dvipsnames]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                       %%%%%
+%%%%%     LIST OF USEFUL LaTeX PACKAGES     %%%%%
+%%%%%                                       %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ---
+% Character encoding
+% ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ---
+% Layout
+% ---
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+% ---
+% Language related packages
+% ---
+\usepackage[english]{babel}
+\usepackage[abbreviations,british]{foreign}
+
+% ---
+% Bibliography-related
+% ---
+\usepackage[numbers, sort&compress]{natbib}
+
+% ---
+% Colours
+% ---
+\usepackage[]{color}
+\usepackage[]{xcolor}
+
+% ---
+% Figures
+% ---
+\usepackage[]{graphicx}
+\usepackage[]{subfigure}
+
+\graphicspath{{imgs/}}
+
+% ---
+% Mathematics
+% ---
+\usepackage[]{mathtools}
+\usepackage[]{amssymb, amsmath, amsfonts}
+\usepackage[]{yhmath}
+\usepackage[]{stmaryrd}
+\usepackage[]{nicefrac}
+
+% ---
+% Physics
+% ---
+\usepackage[]{siunitx}
+\usepackage[]{physics}
+
+% ---
+% In-text references
+% ---
+\usepackage[]{hyperref}
+\usepackage[noabbrev]{cleveref}
+
+% ---
+% Typography-related
+% ---
+\usepackage[protrusion=true,activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100]{microtype}
+\usepackage[subtle]{savetrees}
+
+\clubpenalty         = 10000
+\widowpenalty        = 10000
+\displaywidowpenalty = 10000
+
+% ---
+% Tikz-related
+% ---
+\usepackage[]{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{patterns}
+\usetikzlibrary{backgrounds}
+
+% ---
+% PGF related
+% ---
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+% ---
+% Miscellaneous
+% ---
+\usepackage[]{lipsum}
+\usepackage[]{xparse}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                                     %%%%%
+%%%%%     LIST OF COMMANDS AND MACROS     %%%%%
+%%%%%                                     %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\redline}{\raisebox{2pt}{\tikz{\draw[-, thick, red, dashed, line width = 0.9pt](0,0) -- (5mm,0);}}}
+\newcommand{\blueline}{\raisebox{2pt}{\tikz{\draw[-, thick, blue!67, solid, line width = 0.9pt](0,0) -- (5mm,0);}}}
+
+% ---
+% Annotating equations using Tikz
+% ---
+\newcommand{\highlight}[2]{\colorbox{#1!17}{\ensuremath{\displaystyle #2}}}
+\newcommand{\highlightdark}[2]{\colorbox{#1!47}{\ensuremath{\displaystyle #2}}}
+
+% ---
+% Mathematics
+% ---
+
+% Simple macros
+\renewcommand{\det}[1]{\text{det}\left( #1 \right)}
+\renewcommand{\trace}[1]{\text{Tr}\left( #1 \right)}
+\newcommand{\Span}[1]{\text{Span}\left( #1 \right)}
+\newcommand{\conj}[1]{\ensuremath{#1^*}}
+
+
+% Algebra
+\newcommand{\e}{\ensuremath{\mathrm{e}}}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathbb{C}}}
+\newcommand{\K}{\ensuremath{\mathbb{K}}}
+
+\newcommand{\innerprod}[2]{\ensuremath{\left\langle #1 \vert #2 \right\rangle}}
+
+% Linear algebra
+\newcommand{\allones}{\ensuremath{\mathbf{1}}}
+\newcommand{\allzeros}{\ensuremath{\mathbf{0}}}
+\newcommand{\Gram}[1]{\ensuremath{\mathbf{#1}^H \mathbf{#1}}}
+\newcommand{\inv}[1]{\ensuremath{\mathbf{#1}^{-1}}}
+\newcommand{\pinv}[1]{\ensuremath{\mathbf{#1}^{\dagger}}}
+\newcommand{\svd}[1]{\ensuremath{\mathbf{U}_{#1} \boldsymbol{\Sigma}_{#1} \mathbf{V}^H_{#1}}}
+
+% Probability and statistics
+\newcommand{\E}[1]{\ensuremath{\mathbb{E} \left( #1 \right)}}
+\newcommand{\covmat}[1]{\ensuremath{\mathbf{C}_{\mathbf{#1}}}}
+
+% Optimization problems
+\DeclareMathOperator*{\minimize}{minimize~}
+\DeclareMathOperator*{\argmin}{argmin~}
+
+\DeclareMathOperator*{\maximize}{maximize~}
+\DeclareMathOperator*{\argmax}{argmax~}
+
+\DeclareMathOperator{\subto}{subject~to~}
+
+% Column and row vectors.
+\ExplSyntaxOn
+\NewDocumentCommand{\colvec}{O{1}m}
+{
+  \scalebox{#1}{$\generalvec{#2}{\\}$}
+}
+\NewDocumentCommand{\rowvec}{O{1}m}
+{
+  \scalebox{#1}{$\generalvec{#2}{&}$}
+}
+\NewDocumentCommand{\generalvec}{mm}
+{
+  \clist_set:Nn \l_tmpa_clist { #1 }
+  %\renewcommand{\arraystretch}{.8}
+  \begin{bmatrix}
+    \clist_use:Nn \l_tmpa_clist { #2 }
+  \end{bmatrix}
+}
+\ExplSyntaxOff
+
+
+
+
+
+
+
+
+\title{Title}
+\author{Jean-Christophe Loiseau}
+
+\begin{document}
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%                      %%%%%
+%%%%%     BIBILOGRAPHY     %%%%%
+%%%%%                      %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plainnat}
+\bibliography{../../../../Utils/Bibliography/bibliography.bib}
+
+\end{document}
