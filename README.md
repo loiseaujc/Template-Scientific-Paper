@@ -42,6 +42,9 @@ It includes the files:
 
 Note that it only is a starting point.
 Feel free to modify it to your convenience by adding or removing any packages or macros you want.
+Numerous resources for good $\LaTeX$ practices can be found online.
+You will find below a non-exhaustive list:
+- [latex-advice](https://github.com/dspinellis/latex-advice) by [Diomidis Spinellis](https://github.com/dspinellis)
 
 ## Reproducible research
 
