@@ -33,6 +33,11 @@ Each of these folders serve the following purposes:
 - `src`: This folder includes all of the source code (`Julia`, `Python`, `Fortran`, etc) needed to re-run the computations.
 - `test`: This folder contains all the tests (if any) used to validate the different implementations.
 
+This template repository also sets up some `GitHub Actions` to automatically compile the `pdf` associated with `manuscript/main/Main.tex`.
+Note that this Action is only executed when changes to any files in `manuscript/main` are being pushed.
+Modifications of any other file in the repository will not trigger it.
+The resulting `pdf` can be found from the `Actions` tab on `github.com` by clicking on the `Summary` associated with the last `Action` executed.
+
 ## Good practices in $\LaTeX$
 
 The folder `manuscript/main` contains the template of a paper written using $\LaTeX$.
