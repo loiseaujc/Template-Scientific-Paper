@@ -46,6 +46,12 @@ Numerous resources for good $\LaTeX$ practices can be found online.
 You will find below a non-exhaustive list:
 - [latex-advice](https://github.com/dspinellis/latex-advice) by [Diomidis Spinellis](https://github.com/dspinellis)
 
+Here are also a few useful resources about how to make nice figures using `matplotlib`:
+- [tikzplotlib](https://github.com/nschloe/tikzplotlib): A nice `Python` utility to translate `matplotlib` figure into `tikz` code that can easily be incorporated into a $\LaTeX$ document.
+- [HowToMakeAPlot](https://github.com/cajohare/HowToMakeAPlot): Slides and code by [Ciaran O'Hare](https://github.com/cajohare) focused around specific examples to improve plots using `matplotlib`.
+- [SciencePlots](https://github.com/garrettj403/SciencePlots): A `Python` package providing different `matplotlib` styles to format figures for scientific papers.
+- [Scientific Visualization: Python + Matplotlib](https://github.com/rougier/scientific-visualization-book): An open source by [Nicolas Rougier](https://github.com/rougier) which I highly recommend!
+
 ## Reproducible research
 
 ## Miscellaneous
