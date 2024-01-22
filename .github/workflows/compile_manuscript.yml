@@ -14,5 +14,6 @@ jobs:
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
+          working_directory: manuscript/main/
           name: PDF
           path: Main.pdf
